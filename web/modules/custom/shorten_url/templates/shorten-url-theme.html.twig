@@ -1,0 +1,25 @@
+<h1>{{shorten_url_data['short_code']}}</h1>
+<table>
+  <tbody>
+    <tr>
+      <td><b>ID</b></td>
+      <td>{{ shorten_url_data['id'] }}</td>
+    </tr>
+    <tr>
+      <td><b>Long URL</b></td>
+      <td>{{ shorten_url_data['long_url'] }}</td>
+    </tr>
+    <tr>
+      <td><b>Short Code</b></td>
+      <td>
+        <a class="shorten_link" href="{{ '/addweb.ly/' ~ shorten_url_data['short_code'] }}" target="_blank">
+          {{ shorten_url_data['short_code'] }}
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><b>QR Code</b></td>
+      <td><div id="qrcodeCanvas"></div></td>
+    </tr>
+  </tbody>
+</table>

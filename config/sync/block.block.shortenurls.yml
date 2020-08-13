@@ -1,0 +1,35 @@
+uuid: c22edfff-eeeb-4085-a73e-234ffa04b3d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - shorten_url
+    - system
+    - user
+  theme:
+    - bartik
+id: shortenurls
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: shorten_url_form_block
+settings:
+  id: shorten_url_form_block
+  label: 'Shorten URLs'
+  provider: shorten_url
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

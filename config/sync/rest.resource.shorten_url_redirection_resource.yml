@@ -1,0 +1,20 @@
+uuid: 1f038040-4317-4ae2-b145-1cb31b102a63
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - serialization
+    - shorten_url
+    - user
+id: shorten_url_redirection_resource
+plugin_id: shorten_url_redirection_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

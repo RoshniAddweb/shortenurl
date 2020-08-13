@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * @file
+ * Installs the Shorten module.
+ */
+
+/**
+ * Create new database table by update hook{short_urls}.
+ */
+function shorten_url_update_8101() {
+
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  $table_name = 'short_urls';
+
+  $table_schema = [
+    'description' => 'Use for shorten url.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+      'long_url' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ],
+      'short_code' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ],
+      'is_vanity_url' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 1,
+      ],
+      'uid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+      'created' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'id' => ['id'],
+      'long_url' => ['long_url'],
+      'short_code' => ['short_code'],
+    ],
+  ];
+
+  $schema->createTable($table_name, $table_schema);
+}
+
+/**
+ * Create new database table by update hook{short_urls_analytics}.
+ */
+function shorten_url_update_8102() {
+
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  $table_name = 'short_urls_analytics';
+
+  $table_schema = [
+    'description' => 'Analytics for shorten url.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+      'short_urls_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+      'uid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+      'short_code' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ],
+      'ip_address' => [
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'length' => 255,
+      ],
+      'created' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'length' => 11,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'id' => ['id'],
+      'short_urls_id' => ['short_urls_id'],
+      'uid' => ['uid'],
+    ],
+  ];
+
+  $schema->createTable($table_name, $table_schema);
+}

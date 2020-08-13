@@ -1,0 +1,11 @@
+shorten_url_js:
+  version: 1.x
+  js:
+    js/jquery.qrcode.js: {}
+    js/qrcode.js: {}
+    js/shorten_url.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.ajax
+    - core/drupalSettings

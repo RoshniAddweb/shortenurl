@@ -1,0 +1,21 @@
+shorten_url.shorten_url:
+  path: '/admin/config/shorten_url'
+  defaults:
+    _form: '\Drupal\shorten_url\Form\ShortenURLForm'
+    _title: 'Shorten URL'
+  requirements:
+    _permission: 'access shorten url'
+shorten_url.view_shorten_url:
+  path: '/view/{short_code}'
+  defaults:
+     _controller: '\Drupal\shorten_url\Controller\ShortenURLController::viewShortUrlData'
+  requirements:
+     _access: 'TRUE'
+     _permission: 'access shorten url'
+shorten_url.redirect_original_url:
+  path: '/addweb.ly/{short_code}'
+  defaults:
+     _controller: '\Drupal\shorten_url\Controller\ShortenURLController::redirectOriginalUrl'
+  requirements:
+     _access: 'TRUE'
+     _permission: 'access shorten url'

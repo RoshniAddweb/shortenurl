@@ -1,0 +1,4 @@
+name: 'Shorten URLs'
+type: module
+description: 'Shorten URLs'
+core: 8.x

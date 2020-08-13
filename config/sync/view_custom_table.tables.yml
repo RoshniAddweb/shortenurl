@@ -1,0 +1,12 @@
+short_urls:
+  table_name: short_urls
+  table_database: default
+  description: ''
+  column_relations: 'a:2:{s:2:"id";s:10:"short_urls";s:7:"created";s:10:"short_urls";}'
+  created_by: '1'
+short_urls_analytics:
+  table_name: short_urls_analytics
+  table_database: default
+  description: ''
+  column_relations: 'a:0:{}'
+  created_by: '1'

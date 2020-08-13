@@ -1,0 +1,14 @@
+uuid: 50022f45-665c-4f05-8287-18efe0efed26
+name: 'Shorten URL'
+mail: roshni@addwebsolution.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
